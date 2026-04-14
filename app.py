@@ -6,6 +6,9 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 import plotly.graph_objects as go
 import warnings
+import os
+from dotenv import load_dotenv
+load_dotenv()
 warnings.filterwarnings('ignore')
 
 # Try importing Gemini, fallback if not available
@@ -62,7 +65,9 @@ stats = {
 # ============================================
 
 if GEMINI_AVAILABLE:
-    genai.configure(api_key="AIzaSyC94QgySrGQ0c3XmzQ2WfkJqTXw9th4tnI")
+    genai.configure(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
     gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
 SYSTEM_CONTEXT = """
