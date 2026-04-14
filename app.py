@@ -210,9 +210,10 @@ def predict_risk(city, weather, road_type, visibility, traffic_density,
                 </div>
             </div>
             
-            <div style="padding: 16px; background: #f9fafb; border-radius: 8px; 
-                        border-left: 4px solid {risk_color}; color: #374151;">
-                <strong>📋 Recommendation:</strong> {recommendations}
+            <div style="padding: 16px; background: #f0f9ff; border-radius: 8px; 
+                        border-left: 4px solid {risk_color}; color: #111827 !important;">
+                <strong style="color: #111827 !important;">📋 Recommendation:</strong> 
+                        <span style="color: #111827 !important;">{recommendations}</span>
             </div>
             
             <div style="margin-top: 16px; font-size: 12px; color: #9ca3af; text-align: right;">
@@ -445,25 +446,26 @@ body, .gradio-container {
 }
 
 .tab-nav button {
-    color: #374151 !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 10px 20px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
+    color: #111827 !important;
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     border-radius: 8px !important;
     transition: all 0.15s !important;
     margin: 2px !important;
 }
 
 .tab-nav button:hover {
-    background: #f3f4f6 !important;
-    color: #111827 !important;
+    background: #e5e7eb !important;
+    color: #000000 !important;
 }
 
 .tab-nav button.selected {
     background: #3b82f6 !important;
     color: #ffffff !important;
+    border-color: #3b82f6 !important;
 }
 
 .gr-box, .gr-form, .gr-panel {
